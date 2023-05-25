@@ -10,7 +10,8 @@
 
 		     StringBuffer sb1 = new StringBuffer("sagar");
 
-		     System.out.println
+		     System.out.println(System.identityHashCode(sb));
+		     System.out.println(System.identityHashCode(sb1));
 	      
 	      }
 	 
