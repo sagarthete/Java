@@ -7,7 +7,7 @@
 	}
  }
  
- class Child extends Parent,implements Runnable{
+ class Child extends Parent implements Runnable{
  
  	void gun(){
 	
@@ -24,7 +24,8 @@
  
  	public static void main(String args[]){
 	
-		MyThread obj = new MyThread();
-		obj.start();
+		Child obj = new Child();
+		Thread t = new Thread(obj);
+		t.start();
 	}
  }
