@@ -20,31 +20,32 @@
 			arr[i] = Integer.parseInt(br.readLine());
 
 		}
-		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
+		int s = 0;
+		for(int i =0;i<size;i++){
 			int count = 0;
+			int ind = 0;
 			for(int j = 0;j<size;j++){
-			
 				if(arr[i]==arr[j]){
-				
 					count++;
-					if(count==k){
-						temp = j;
-					}
+					ind = j;
 				}
 			}
-			if(temp<last){
-				last = temp;
+			if(count>=2){
+				for(int k = ind;k<size-1;k++){
+					if(k==size-2){
+						arr[k+1] = 0;
+						s++;
+					}
+					else{
+						arr[k] = arr[k+1];
+					}	
+				}
 			}
+
 		}
-		System.out.println("the first is : "+arr[last]);
+		System.out.println("array is .....");
+		for(int i = 0;i<size;i++)
+			System.out.println(arr[i]);
 	}
  
  }

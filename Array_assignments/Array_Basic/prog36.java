@@ -20,31 +20,26 @@
 			arr[i] = Integer.parseInt(br.readLine());
 
 		}
-		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
+		int first = 0;
+		int last = 0;
+		int mid = 0;
 		for(int i=0;i<size;i++){
-		
-			int count = 0;
-			for(int j = 0;j<size;j++){
-			
-				if(arr[i]==arr[j]){
-				
-					count++;
-					if(count==k){
-						temp = j;
-					}
-				}
+			if(i==0 && arr[0]>arr[1]){
+				first = arr[0];	
+			}else if(i==size-1 && arr[size-1]>arr[size-2]){
+				last = arr[size-1];
 			}
-			if(temp<last){
-				last = temp;
+			else if(arr[i]>arr[i+1] && arr[i]>arr[i-1]){
+				mid = arr[i];
 			}
 		}
-		System.out.println("the first is : "+arr[last]);
+		if(last!=0)
+			System.out.println(last);
+		if(first!=0)
+			System.out.println(last);
+		if(mid!=0)
+			System.out.println(last);
+
 	}
  
  }

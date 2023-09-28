@@ -1,4 +1,4 @@
-//search element from the array
+//smallest and second smallest element in array
 
  import java.io.*;
 
@@ -15,36 +15,29 @@
 
 		System.out.println("enter the elements in array");
 
+		
 		for(int i = 0;i<size;i++){
 		
 			arr[i] = Integer.parseInt(br.readLine());
-
-		}
-		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
-			int count = 0;
-			for(int j = 0;j<size;j++){
 			
-				if(arr[i]==arr[j]){
-				
-					count++;
-					if(count==k){
-						temp = j;
-					}
-				}
-			}
-			if(temp<last){
-				last = temp;
+		}
+		int small = arr[0];
+		int small2 = 60000;
+		for(int i = 0;i<size;i++){
+			if(small>arr[i]){
+				small = arr[i];
 			}
 		}
-		System.out.println("the first is : "+arr[last]);
+		for(int i = 0;i<size;i++){
+			if(small2>arr[i] && arr[i]!=small){
+				small2 = arr[i];
+			}
+		}
+
+		System.out.println("smallest ele is : "+small);
+		System.out.println("second smallest ele is : "+small2);
+		System.out.println(Integer.MAX_VALUE);
+
 	}
  
  }

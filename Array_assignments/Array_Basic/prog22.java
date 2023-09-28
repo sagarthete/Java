@@ -1,4 +1,4 @@
-//search element from the array
+//odd exponetial
 
  import java.io.*;
 
@@ -20,32 +20,21 @@
 			arr[i] = Integer.parseInt(br.readLine());
 
 		}
-		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
+		for(int i = 0;i<size;i++){
 			int count = 0;
 			for(int j = 0;j<size;j++){
 			
 				if(arr[i]==arr[j]){
-				
 					count++;
-					if(count==k){
-						temp = j;
-					}
 				}
 			}
-			if(temp<last){
-				last = temp;
-			}
+			if(count%2!=0){
+				System.out.println("odd Exponetial : "+arr[i]);
+				break;
+			}	
 		}
-		System.out.println("the first is : "+arr[last]);
 	}
  
  }
+ 
  

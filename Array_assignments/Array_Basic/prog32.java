@@ -18,33 +18,25 @@
 		for(int i = 0;i<size;i++){
 		
 			arr[i] = Integer.parseInt(br.readLine());
-
 		}
+		int sum = 0;
+		System.out.println("---------");
+		for(int i = 0;i<size;i++){
 		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
-			int count = 0;
-			for(int j = 0;j<size;j++){
-			
-				if(arr[i]==arr[j]){
-				
-					count++;
-					if(count==k){
-						temp = j;
-					}
+			for(int j = 0;j<size-1;j++){
+				if(arr[j]>arr[j+1]){
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
 				}
 			}
-			if(temp<last){
-				last = temp;
-			}
 		}
-		System.out.println("the first is : "+arr[last]);
+		for(int i = 0;i<size;i++){
+			int prod = arr[i]*i;
+			sum = sum+prod;
+		}
+		System.out.println("sum is : "+sum);
+		
 	}
  
  }

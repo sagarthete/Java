@@ -1,4 +1,4 @@
-//search element from the array
+//positive and nigative elements
 
  import java.io.*;
 
@@ -20,31 +20,17 @@
 			arr[i] = Integer.parseInt(br.readLine());
 
 		}
+		for(int i = 0;i<size-1;i++){
 		
-		System.out.println("enter k");
-		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
-			int count = 0;
-			for(int j = 0;j<size;j++){
-			
-				if(arr[i]==arr[j]){
-				
-					count++;
-					if(count==k){
-						temp = j;
-					}
-				}
-			}
-			if(temp<last){
-				last = temp;
+			if(arr[i]<0 && arr[i+1]>0){
+				int temp = arr[i];
+				arr[i] = arr[i+1];
+				arr[i+1] = temp;
 			}
 		}
-		System.out.println("the first is : "+arr[last]);
+		for(int i = 0;i<size;i++){
+			System.out.print(arr[i]+" ");
+		}
 	}
  
  }

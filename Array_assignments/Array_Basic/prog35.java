@@ -3,6 +3,30 @@
  import java.io.*;
 
  class ArrayDemo{
+
+	static int[] sort(int []arr,int size){
+	
+		for(int i = 0;i<size;i++){
+			for(int j=0;j<size-1;j++){
+				if(arr[j]>arr[j+1]){
+					int temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+
+	 static void minimumProduct(int arr[],int size,int k){
+	 
+	 	int arr1[] = sort(arr,size);
+		int prod = 1;
+		for(int i=0;i<k;i++){
+			prod = prod*arr1[i];
+		}
+		System.out.println("prod is : " +prod);
+	 }
  
  	public static void main(String args[])throws IOException{
 	
@@ -20,31 +44,9 @@
 			arr[i] = Integer.parseInt(br.readLine());
 
 		}
-		
 		System.out.println("enter k");
 		int k = Integer.parseInt(br.readLine());
-		
-		int last = size;
-		int temp = 0;
-
-		for(int i=0;i<size;i++){
-		
-			int count = 0;
-			for(int j = 0;j<size;j++){
-			
-				if(arr[i]==arr[j]){
-				
-					count++;
-					if(count==k){
-						temp = j;
-					}
-				}
-			}
-			if(temp<last){
-				last = temp;
-			}
-		}
-		System.out.println("the first is : "+arr[last]);
+		minimumProduct(arr,size,k);
 	}
  
  }
